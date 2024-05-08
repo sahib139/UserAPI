@@ -8,6 +8,7 @@ class CommentController{
 
     async create(req,res){
         try {
+            console.log(req.body);
             const response = await this.commentService.create(req.body);
             return res.status(200).json({
                 data:response,

@@ -6,7 +6,7 @@ class CommentService{
         this.postRepository = new PostRepository();
     }
 
-    async create({model,modelId,userId,Content}){
+    async create({model,modelId,userId,content}){
         try{
             if(model === 'Post'){
                 var commentable = await this.postRepository.get(modelId);
@@ -18,7 +18,7 @@ class CommentService{
             }
             console.log(commentable);
             const new_comment = await this.commentRepository.create({
-                content:Content,
+                content:content,
                 onModel:model,
                 commentable:modelId,
                 user:userId,

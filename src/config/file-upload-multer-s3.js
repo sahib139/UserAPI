@@ -1,10 +1,10 @@
 const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
-const {AWS_S3_Bucket,AWS_Access_KEY,AWS_Secret_KEY} = require("../config/server-config");
+const {AWS_S3_Bucket,AWS_Access_KEY,AWS_Secret_KEY,AWS_S3_Region} = require("../config/server-config");
 
 aws.config.update({
-    region : "ap-south-1",
+    region : AWS_S3_Region,
     accessKeyId : AWS_Access_KEY,
     secretAccessKey : AWS_Secret_KEY,
 });
