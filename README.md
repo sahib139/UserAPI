@@ -4,11 +4,33 @@
 - Download the repository in your local machine
 - Go to project root folder and run `npm i`
 - Then to start server , run `npm start`
+- Update .env with following values:
+    - AWS_S3_Bucket = `<Your AWS S3 bucket name>`
+    - AWS_Access_KEY = `<Your AWS Access key>`
+    - AWS_Secret_KEY = `<Your AWS Secret key>`
+    - AWS_S3_Region = `<Your AWS S3 bucket region code>`
 
 # API end-points
-- (POST)localhost:3000/api/v1/users/signup
-    - request body should have {email,username,password}
-- (POST)localhost:3000/api/v1/users/signin
-    - request body should have {email,password}
-- (PATCH)localhost:3000/api/v1/users/forgot-password
-    - request body should have {email,newPassword}
+- User
+    - (POST)localhost:3000/api/v1/users/signup
+        - request body should have {email,username,password}
+    - (POST)localhost:3000/api/v1/users/signin
+        - request body should have {email,password}
+    - (PATCH)localhost:3000/api/v1/users/forgot-password
+        - request body should have {email,newPassword}
+
+- Post
+    - (GET)localhost:3000/api/v1/posts/{id}
+    - (POST)localhost:3000/api/v1/posts
+        - request body should have content or images or both
+    - (PUT)localhost:3000/api/v1/posts/{id}
+        - request body can have data like content or images or empty
+    - (DELETE)localhost:3000/api/v1/posts/{id}
+
+- Comment
+    - (POST)localhost:3000/api/v1/comments
+        - request body should have (content,model->(Post/Comment),modelId,userId)
+
+- Like
+    - (POST)localhost:3000/api/v1/likes/toggle
+        - request body should have (model->(Post/Comment),modelId,userId)
