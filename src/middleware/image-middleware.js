@@ -12,7 +12,7 @@ const uploadImages = (req,res,next)=>{
                 });
             }
             if(!req.files || req.files.length === 0){
-                next();
+                return next();
             }
             req.body.images = req.files.map(file => file.location);
             next();

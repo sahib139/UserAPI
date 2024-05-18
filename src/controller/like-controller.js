@@ -8,6 +8,7 @@ class LikeController{
 
     async toggleLike(req,res){
         try {
+            req.body.userId = req.user.userId;
             const response = await this.likeService.toggleLike(req.body);
             return res.status(200).json({
                 data:response,

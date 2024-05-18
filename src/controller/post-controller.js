@@ -8,6 +8,7 @@ class PostController {
 
     async create (req,res){
         try {
+            req.body.userId = req.user.userId;
             const post = await this.postService.create(req.body);
             return res.status(200).json({
                 data:post,
@@ -46,6 +47,7 @@ class PostController {
 
     async update (req,res){
         try {
+            req.body.userId = req.user.userId;
             const post = await this.postService.update(req.params.id,req.body);
             return res.status(200).json({
                 data:post,
