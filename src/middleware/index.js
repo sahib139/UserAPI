@@ -4,4 +4,5 @@ module.exports={
     LikeMiddleware : require("./like-middleware"),
     CommentMiddleware: require("./comment-middleware"),
     ImageMiddleware : require("./image-middleware"),
+    IsAuthenticate : require("./authenticate-middleware"),
 }
