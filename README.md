@@ -16,31 +16,31 @@
 
 ## API end-points
 - User
-    - (POST) localhost:3000/api/v1/users/signup
+    - (POST) https://localhost:3000/api/v1/users/signup
         - request body should have {email,username,password}
-    - (POST) localhost:3000/api/v1/users/signin
+    - (POST) https://localhost:3000/api/v1/users/signin
         - request body should have {email,password}
-    - (PATCH) localhost:3000/api/v1/users/forgot-password
+    - (PATCH) https://localhost:3000/api/v1/users/forgot-password
         - request body should have {email,newPassword}
 
 - Post
-    - (GET) localhost:3000/api/v1/posts/{id}
+    - (GET) https://localhost:3000/api/v1/posts/{id}
         - request header should have {x-access-token}
-    - (POST) localhost:3000/api/v1/posts
+    - (POST) https://localhost:3000/api/v1/posts
         - request header should have {x-access-token}
         - request body should have content or images or both
-    - (PUT) localhost:3000/api/v1/posts/{id}
+    - (PUT) https://localhost:3000/api/v1/posts/{id}
         - request header should have {x-access-token}
         - request body can have data like content or images or empty
-    - (DELETE) localhost:3000/api/v1/posts/{id}
+    - (DELETE) https://localhost:3000/api/v1/posts/{id}
 
 - Comment
-    - (POST) localhost:3000/api/v1/comments
+    - (POST) https://localhost:3000/api/v1/comments
         - request header should have {x-access-token}
         - request body should have (content,model->(Post/Comment),modelId,userId)
 
 - Like
-    - (POST) localhost:3000/api/v1/likes/toggle
+    - (POST) https://localhost:3000/api/v1/likes/toggle
         - request header should have {x-access-token}
         - request body should have (model->(Post/Comment),modelId,userId)
 
