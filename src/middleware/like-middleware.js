@@ -2,8 +2,8 @@ const {StatusCodes} = require("http-status-codes");
 
 const toggleMiddleware = (req,res,next)=>{
     try {
-        const {model,modelId,userId} = req.body;
-        if(!model || !modelId || !userId){
+        const {model,modelId} = req.body;
+        if(!model || !modelId){
             throw "request must have model,modelId,userId parameters";
         }
         if(model !== "Post" && model!== "Comment"){

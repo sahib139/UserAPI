@@ -2,9 +2,9 @@ const {StatusCodes} = require("http-status-codes");
 
 const createMiddleware = (req,res,next)=>{
     try {
-        const {content,model,modelId,userId} = req.body;
+        const {content,model,modelId} = req.body;
         console.log(req.body);
-        if(!content || !model || !modelId || !userId){
+        if(!content || !model || !modelId ){
             throw "request must have content,model,modelId,userId parameters";
         }
         if(model !== "Post" && model!== "Comment"){
