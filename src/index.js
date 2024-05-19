@@ -12,9 +12,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use("/api",APIroutes);
-app.use("/hey",(req,res)=>{res.status(200).json({
-    msg:"hey buddy",
-})})
 
 const sslServer = https.createServer({
     key  : fs.readFileSync(path.join(__dirname,'..','cert','key.pem')),
